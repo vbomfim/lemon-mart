@@ -1,0 +1,19 @@
+{
+    "name": "Lemon-Mart",
+    "short_name": "Lemon-Mart",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png?v=Gvb40lQ9lz",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png?v=Gvb40lQ9lz",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
