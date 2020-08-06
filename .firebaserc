@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "lemonmart-9ec2a"
+  },
+  "targets": {
+    "lemonmart-9ec2a": {
+      "hosting": {
+        "lemon-mart": [
+          "lemonmart-9ec2a"
+        ]
+      }
+    }
+  }
+}

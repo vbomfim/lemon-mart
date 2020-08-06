@@ -59,10 +59,13 @@ import { AuthService } from './auth/auth.service';
         </button>
       </mat-toolbar>
       <mat-sidenav-container class="app-sidenav-container">
-        <mat-sidenav #sidenav
+        <mat-sidenav
+          #sidenav
           [mode]="media.isActive('xs') ? 'over' : 'side'"
-          [fixedInViewport] = "media.isActive('xs')"
-          fixedTopGap="56" [(opened)]="opened">
+          [fixedInViewport]="media.isActive('xs')"
+          fixedTopGap="56"
+          [(opened)]="opened"
+        >
           <app-navigation-menu></app-navigation-menu>
         </mat-sidenav>
         <mat-sidenav-content>
@@ -119,6 +122,12 @@ export class AppComponent implements OnInit, OnDestroy {
       'lemon',
       sanitizer.bypassSecurityTrustResourceUrl('assets/img/icons/lemon.svg')
     );
+    this.opened = false;
+  }
+  ngOnDestroy(): void {
+    this.subSink.unsubscribe();
+  }
+  ngOnInit(): void {
     this.subSink.sink = combineLatest([
       this.media.asObservable(),
       this.authService.authStatus$,
@@ -133,12 +142,5 @@ export class AppComponent implements OnInit, OnDestroy {
         })
       )
       .subscribe();
-    this.opened = false;
-  }
-  ngOnDestroy(): void {
-    this.subSink.unsubscribe();
-  }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 }
